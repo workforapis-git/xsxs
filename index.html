@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XSXS — XSS Safe Sandbox</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Safe input playground</p>
+          <h1>XSXS</h1>
+        </div>
+        <span class="badge">HTML Escaped</span>
+      </header>
+
+      <section class="panel input-panel">
+        <label for="source">Paste text or HTML</label>
+        <textarea id="source" rows="10" placeholder="Try: &lt;script&gt;alert('oops')&lt;/script&gt; &lt;strong&gt;hello&lt;/strong&gt;">&lt;script&gt;alert('oops')&lt;/script&gt;
+&lt;strong&gt;hello&lt;/strong&gt;</textarea>
+      </section>
+
+      <section class="actions">
+        <button id="renderBtn" type="button">Render safely</button>
+        <button id="resetBtn" type="button" class="secondary">Reset</button>
+      </section>
+
+      <section class="results">
+        <article class="card">
+          <h2>Safe preview</h2>
+          <div id="preview" class="preview"></div>
+        </article>
+
+        <article class="card">
+          <h2>Escaped output</h2>
+          <pre id="escaped" class="escaped"></pre>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
